@@ -1,16 +1,21 @@
-<h1><%= @user.name %></h1>
-<p>Posts: <%= @user.posts_counter %></p>
+<main>
+  <article>
+    <h1><%= @user.name %></h1>
+    <p>Posts: <%= @user.posts_counter %></p>
+    <p>Bio: <%= @user.bio %></p>
+  </article>
 
-<h2>Posts:</h2>
-<ul>
-<% @user.posts.each do |post| %>
-<li>
- <div>
-    <h6><%= post.title %> <%= post.id %></h6>
+  <% @user.posts.each do |post| %>
+
+    <%= link_to user_posts_path(@user) do %>
+      <h2><%= post.title %></h2>
+    <% end %>
     <p><%= post.text %></p>
-  </div>
-</li>
-</ul>
 
-
-<% end %>
+    <div class="comment-card">
+      <% post.comments.each do |comment| %>
+        <!-- Display comments here -->
+      <% end %>
+    </div>
+  <% end %>
+</main>
