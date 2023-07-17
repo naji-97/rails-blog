@@ -1,0 +1,21 @@
+<main>
+  <article>
+    <h1><%= @user.name %></h1>
+    <p>Posts: <%= @user.posts_counter %></p>
+    <p>Bio: <%= @user.bio %></p>
+  </article>
+
+  <% @user.posts.each do |post| %>
+
+    <%= link_to user_posts_path(@user) do %>
+      <h2><%= post.title %></h2>
+    <% end %>
+    <p><%= post.text %></p>
+
+    <div class="comment-card">
+      <% post.comments.each do |comment| %>
+        <!-- Display comments here -->
+      <% end %>
+    </div>
+  <% end %>
+</main>
