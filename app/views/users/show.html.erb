@@ -1,0 +1,16 @@
+<h1><%= @user.name %></h1>
+<p>Posts: <%= @user.posts_counter %></p>
+
+<h2>Posts:</h2>
+<ul>
+<% @user.posts.each do |post| %>
+<li>
+ <div>
+    <h6><%= post.title %> <%= post.id %></h6>
+    <p><%= post.text %></p>
+  </div>
+</li>
+</ul>
+
+
+<% end %>
