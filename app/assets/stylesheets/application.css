@@ -33,12 +33,6 @@ body {
   overflow-x: hidden;
 }
 
-header .left-group {
-  width: 10%;
-  display: flex;
-  justify-content: space-between;
-}
-
 main {
   width: 40%;
   height: auto;
