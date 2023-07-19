@@ -1,16 +1,20 @@
-<h1>List of Posts for <%= @user.name %></h1>
-<p>Posts: <%= @user.posts_counter %></p>
+<main>
+  <% if @posts.nil? || @posts.empty? %>
+    <h1>There are no posts for this user</h1>
+  <% else %>
+    <%= render partial: 'shared/user_card', object: @user, as: :user %>
 
-<% @posts.each do |post| %>
-  <section>
-   <h2><%= link_to post.title, user_post_path(@user, post) %></h2>
-    <p><%= post.text %></p>
+    <h1>Here is the list of posts</h1>
 
-    <h3>Comments:</h3>
-    <ul>
-      <% post.comments.each do |comment| %>
-        <li><%= comment.text %></li>
+    <% @posts.each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
+        <%= render partial: 'shared/post_card', locals: { post: post } %>
+        <div class="comment-card">
+          <% post.recent_comment.each do |comment| %>
+            <%= render partial: 'shared/comment_card', locals: { comment: comment, model: @comment, url: user_post_comment_path(@user, post, comment) } %>
+          <% end %>
+        </div>
       <% end %>
-    </ul>
-  </section>
-<% end %>
+    <% end %>
+  <% end %>
+</main>

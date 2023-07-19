@@ -1,14 +1,13 @@
 <main>
+  <%= render partial: 'shared/user_card', locals: {user: @user} %>
   <article>
-    <h1><%= @user.name %></h1>
-    <p>Posts: <%= @user.posts_counter %></p>
     <p>Bio: <%= @user.bio %></p>
-  </article>
-
+<div class="post-user">
+    <small><%= @user.name %>'s posts </small>
   <% @user.posts.each do |post| %>
 
     <%= link_to user_posts_path(@user) do %>
-      <h2><%= post.title %></h2>
+      <h2 class="post-title"><%= post.title %></h2>
     <% end %>
     <p><%= post.text %></p>
 
@@ -17,5 +16,7 @@
         <!-- Display comments here -->
       <% end %>
     </div>
+    </div>
+    </article>
   <% end %>
 </main>

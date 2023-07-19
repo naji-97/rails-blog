@@ -1,11 +1,11 @@
-<h1>List of Users </h1>
-<ul>
+
+<main>
+<h1 class="user-list">List of Users </h1>
 
  <% @users.each do |user| %>
-  <li>
-   <%= link_to user.name, user_path(user) %>
-   - Posts: <%= user.posts_counter%>
-  </li>
+  <%= link_to "/users/#{user.id}" do%>
+    <%= render partial: 'shared/user_card', object: user, as: :user %>
+  <% end %>
  <% end %>
 
-</ul>
+</main>
