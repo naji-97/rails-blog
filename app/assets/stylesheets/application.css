@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Tektur:wght@400;500;600;700;800&display=swap');
+
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+body {
+  background: #08293e;
+  color: rgb(212, 186, 120);
+  font-family: 'Tektur', cursive;;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+header .left-group {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  width: 40%;
+  height: auto;
+  color: rgb(8, 58, 10);
+}
+
+h1,
+h2,
+small {
+  color: #e2e9f0;
+}
+
+.user-list{
+ padding-top: 20px;
+ text-align: center;
+}
+p {
+ font-family: 'Tektur', cursive;;
+  text-align: left;
+  margin-top: 1em;
+}
+
+
+a {
+  color: rgb(212, 186, 120);
+  text-decoration: none;
+}
+
+.user-card {
+  width: 100%;
+  background: rgba(94, 94, 94, 0.5);
+  color: #353738;
+  border-radius: 50px;
+  display: flex;
+  margin: 20px 0;
+  padding: 20px;
+  column-gap: 20px;
+}
+
+.img-container {
+  width: 30%;
+}
+
+.post-user{
+ margin: 10px 5px;
+ padding: 10px 0;
+}
+
+.post-user small{
+ color: #3F51B5;
+ font-size: 20px;
+ padding: 10px 40px;
+}
+
+.post-title{
+ margin-top: 10px;
+ padding: 5px;
+}
+.user-img {
+
+  width: 100px;
+  border-radius: 20px;
+ font-size: 20px;
+}
+
+.user-post{
+ border: #e2e9f0 5px solid;
+}
+.name-container {
+  width: 60%;
+}
+
+.user-name {
+  font-size: 3em;
+}
+
+.count {
+  display: block;
+  text-align: right;
+}
+
+
+.post-card {
+  border-top: 1px solid #78828c;
+  border-bottom: 1px solid #78828c;
+  padding: 10px 0;
+}
+
+.comment-card {
+  border-top: 1px solid #050c14;
+  padding: 20px 5px;
+  margin: 10px auto;
+}
+
+.comment-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
