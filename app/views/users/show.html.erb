@@ -2,21 +2,18 @@
   <%= render partial: 'shared/user_card', locals: {user: @user} %>
   <article>
     <p>Bio: <%= @user.bio %></p>
-<div class="post-user">
+  <div class="post-user">
     <small><%= @user.name %>'s posts </small>
-  <% @user.posts.each do |post| %>
-
-    <%= link_to user_posts_path(@user) do %>
-      <h2 class="post-title"><%= post.title %></h2>
+  <% @user.posts.limit(3).each do |post|%>
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}" do%>
+            <%= render partial: 'shared/post_card', locals: {post: post, like: @like}%>
+            <div class="comment-card">
+                <% post.recent_comment.each do |comment|%>
+                <%= render partial:'shared/comment_card', locals: {comment: comment, url: user_post_comment_path(@user, post, comment)} %>
+                <% end %>
+            </div>
+        <% end%>
     <% end %>
-    <p><%= post.text %></p>
 
-    <div class="comment-card">
-      <% post.comments.each do |comment| %>
-        <!-- Display comments here -->
-      <% end %>
-    </div>
-    </div>
-    </article>
-  <% end %>
+    <%= link_to 'See All Posts', user_posts_path(@user), class: 'btn'%>
 </main>

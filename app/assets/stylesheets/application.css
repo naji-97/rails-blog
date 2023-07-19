@@ -56,6 +56,10 @@ small {
   text-align: center;
 }
 
+.likes {
+  padding: 0 10px;
+}
+
 p {
   font-family: 'Tektur', cursive;
   text-align: left;
