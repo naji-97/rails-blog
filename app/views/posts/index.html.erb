@@ -7,8 +7,9 @@
     <h1>Here is the list of posts</h1>
 
     <% @posts.each do |post| %>
-      <%= link_to user_post_path(@user, post) do %>
-        <%= render partial: 'shared/post_card', locals: { post: post } %>
+
+      <%= link_to user_post_path(@user, post.id) do %>
+        <%= render partial: 'shared/post_card', locals: { post: post, like: @like } %>
         <div class="comment-card">
           <% post.recent_comment.each do |comment| %>
             <%= render partial: 'shared/comment_card', locals: { comment: comment, model: @comment, url: user_post_comment_path(@user, post, comment) } %>
@@ -16,5 +17,6 @@
         </div>
       <% end %>
     <% end %>
+    <%= link_to "Create a Post ", new_user_post_path, class:'add-post' %>
   <% end %>
 </main>
