@@ -1,0 +1,9 @@
+
+<%= form_with(model: @comment, url: user_post_comments_path(@user.id, @post.id), class:'btn-container-comment', local: true) do |form| %>
+<h5> Add Comment</h5>
+
+    <%= form.text_area :text, rows:3, required: true, class:'input' %>
+
+
+  <%= form.submit 'Add', class:"btn" %>
+<% end %>

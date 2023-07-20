@@ -1,9 +1,17 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.text %></p>
+<div class='post-show'>
 
-<h2>Comments:</h2>
-<ul>
-  <% @post.comments.each do |comment| %>
-    <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
-  <% end %>
-</ul>
+    <h1><%= @post.title %></h1>
+    <p><%= @post.text %></p>
+    <%= form_with model: @like, url: user_post_likes_path(@post.author_id, @post), method: :post, class: 'btn-container' do |f| %>
+      <%= f.button type: :submit, class: 'count btn' do%>
+        <%= @post.likes_counter%> Likes
+      <% end %>
+    <% end%>
+    <small>Comments: <%= @post.comments_counter %></small>
+    <div class="comment-card">
+      <% @post.comments.each do |comment| %>
+        <%= render partial: 'shared/comment_card', locals: {comment: comment, url: user_post_comments_path(@user, @post, comment)} %>
+      <% end %>
+    </div>
+    <%= render partial: 'shared/form_comment' %>
+</div>

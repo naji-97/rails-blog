@@ -5,10 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:posts, :comments).find_by(id: params[:id])
+    @user = User.includes(:posts, :comments, :likes).find_by(id: params[:id])
 
     return unless @user.nil?
 
     render html: 'User not found', status: :not_found
+  end
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 end

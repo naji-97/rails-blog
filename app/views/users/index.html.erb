@@ -2,7 +2,7 @@
 <main>
 <h1 class="user-list">List of Users </h1>
 
- <% @users.each do |user| %>
+ <% @users.limit(4).each do |user| %>
   <%= link_to "/users/#{user.id}" do%>
     <%= render partial: 'shared/user_card', object: user, as: :user %>
   <% end %>

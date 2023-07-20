@@ -33,10 +33,16 @@ body {
   overflow-x: hidden;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 main {
   width: 40%;
   height: auto;
-  color: rgb(8, 58, 10);
+  color: #ff9800;
 }
 
 h1,
@@ -131,9 +137,67 @@ a {
   margin: 10px auto;
 }
 
+.btn {
+  background-color: #050c14;
+  padding: 9px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.post-show {
+  margin: 20px 0;
+}
+
+.btn-container-comment {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
 .comment-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.add-post {
+  padding-bottom: 20px;
+}
+
+.input {
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #050c14;
+}
+
+.title {
+  margin: 5px;
+  padding: 5px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+.text {
+  margin: 5px;
+  padding: 5px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
 }
