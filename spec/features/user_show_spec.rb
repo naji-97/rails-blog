@@ -36,7 +36,6 @@ RSpec.describe 'User Show Page', type: :feature do
     expect(page).to have_content(@user.bio)
   end
 
-
   it 'redirects to a user\'s post index page when clicking "See All Posts"' do
     visit user_path(@user)
     click_link 'See All Posts'
