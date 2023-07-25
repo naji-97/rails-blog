@@ -4,5 +4,4 @@ class CommentsController < ApplicationController
 
     redirect_to user_post_path(params[:user_id], params[:post_id]) if @comment.save
   end
-
 end
