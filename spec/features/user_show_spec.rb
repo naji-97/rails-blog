@@ -42,4 +42,27 @@ RSpec.describe 'User Show Page', type: :feature do
 
     expect(page).to have_current_path(user_posts_path(@user))
   end
+
+  it 'displays the user\'s first 3 posts' do
+    visit user_path(@user)
+
+    @user.posts.limit(3).each do |post|
+      expect(page).to have_content(post.title)
+      expect(page).to have_content(post.text)
+    end
+  end
+
+  it 'displays a button that lets me view all of a user\'s posts' do
+    visit user_path(@user)
+
+    expect(page).to have_link('See All Posts', href: user_posts_path(@user))
+  end
+
+  it 'redirects to a post\'s show page when clicking on a user\'s post' do
+    post = @user.posts.create!(title: 'Sample Post', text: 'This is a sample post.')
+    visit user_path(@user)
+    click_link post.title
+
+    expect(page).to have_current_path(user_post_path(@user, post))
+  end
 end
