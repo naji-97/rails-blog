@@ -23,4 +23,18 @@ RSpec.describe 'User Index Page', type: :feature do
     expect(page).to have_css("img[src='#{@user.photo}']")
     expect(page).to have_css("img[src='#{@user2.photo}']")
   end
+
+  it 'displays the number of posts each user has written' do
+    visit users_path
+
+    expect(page).to have_content("Number of Posts: #{@user.posts_counter}")
+    expect(page).to have_content("Number of Posts: #{@user2.posts_counter}")
+  end
+
+  it 'redirects to a user\'s show page when clicking on the user' do
+    visit users_path
+    click_link @user2.name
+
+    expect(page).to have_current_path(user_path(@user2))
+  end
 end
