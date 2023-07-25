@@ -107,11 +107,15 @@ rails s
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Grace Htet**
+👤 **Naji Ali**
 
-- GitHub: [Grace Htet](https://github.com/naji-97)
-- LinkedIn: [Grace Htet](https://linkedin.com/in/abdennaji)
+- GitHub: [Naji ali](https://github.com/naji-97)
+- LinkedIn: [Naji ali](https://linkedin.com/in/abdennaji)
 
+ 👤**Harriet Oteng**
+- GitHub: [@githubhandle](https://github.com/newhoteng)
+- Twitter: [@twitterhandle](https://twitter.com/HarrietOteng1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/harriet-oteng-75554666/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
